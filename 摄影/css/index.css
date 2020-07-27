@@ -1,0 +1,343 @@
+*{/*总体样式*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+/*导航栏部分*/
+.navbar-default{
+	background-color: white;
+}
+.navbar-collapse{/*当屏幕宽度变小时,汉堡按钮的文字居中显示*/
+	text-align: center;
+}
+.navbar-nav a:hover{
+	color: red !important;
+}
+
+/*模态框里的注册页面*/
+.modal-body{
+	/*height: 540px;*/
+}
+.bdusually {
+	margin: 0 auto;
+    width: 520px;
+}
+.usually{
+	width: 100%;
+	float: left;
+}
+.usually  span{
+    width: 100px;
+    line-height: 50px;
+    display: block;
+    float: left;
+}
+.usually  input{
+	float: left;
+	width: 300px;
+	height: 20px;
+    box-sizing: border-box;
+    margin-top: 12px;
+}
+.usually  label{
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+    line-height: 50px;
+}
+#male,#female{
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.usually-xq{
+	width: 100%;
+	float: left;
+}
+.usually-xq  span{
+    width: 100px;
+    display: block;
+    float: left;
+}
+.usually-xq input{
+	margin-left: 5px;
+}
+.usually-xq label{
+	margin-left: 5px;
+}
+.usually textarea{
+	margin-top: 15px;
+}
+/*登录里的代码*/
+.title{
+	display: inline-block;
+	width: 60px;
+	text-align: right;
+}
+.note{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+	font-size: 11px;
+	color: red;
+}
+
+/*轮播项目部分*/
+/*让整个轮播项目向上移动20像素*//*bootstrap3与bootstrap4的轮播项目的不同点:4的轮播比3的高级且是无缝的*/
+.carousel{
+	margin-top: -20px;
+}
+/*让轮播项目里的图片显示一样*/
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+/*清除轮播项目左右两边的阴影*/
+.carousel-control.left{
+	background-image: none !important;
+}
+.carousel-control.right{
+	background-image: none !important;
+}
+
+
+/*tab切换*/
+/*@media (max-width:767px ) {
+	.nav-tabs{
+		padding-left: 18%;
+	}
+}
+@media (min-width:767px){
+	.nav-tabs{
+		padding-left: 36%;
+	}
+}
+@media (min-width:1024px){
+	.nav-tabs{
+		padding-left: 40%;
+	}
+}
+@media (min-width:1200px){
+	.nav-tabs{
+		padding-left: 43%;
+	}
+}
+.nav-tabs>li>a{
+	margin-right: 0px !important;
+}
+.tabsection{
+	padding: 10px;
+	overflow: hidden;
+	background-color: #f7f7f7;
+}
+.tabsection-dhl{
+	margin: 0 auto;
+	overflow: hidden;
+}
+.tabsection h2{
+	text-align: center;
+}
+.pic{
+	margin: 20px auto;
+	width: 320px;
+	height: 263px;	
+	position: relative;
+	overflow: hidden;
+	box-shadow: 5px 8px 10px gray;
+	transition: all .6s ease-in-out;
+}
+.pic div{
+	width: 100%;
+	color: white;
+	background: orange;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	position: absolute;
+	bottom: -50px;
+	transform: 1s;
+	text-align: center;
+}
+.pic img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	transition: 3s;
+}
+.pic img:hover{
+	box-shadow: 5px 5px 10px gray inset;
+	transform: scale(1.75);
+}*/
+/*.pic a:after,.pic a:before{
+	position: absolute;
+	display: block;
+	color: white;
+	width: 100%;
+	height: 100%;
+	transition: 1s;
+	top: 100%;
+	left: 0;
+	opacity: 0.7;
+}
+.pic a:after{
+	content: "城市风光";
+	background-color: rgba(105,105,105,1);
+	z-index: 1;
+	color: white;
+	font-size: 28px;
+	font-weight: bold;
+	padding-top: 20px;
+	text-align: center;
+}*/
+/*.pic a:before{
+	content: "江户时代的天才剑士冲田即使在被作为剑客集团而畏惧的新选组中，也被讴歌为最强的天才剑士。有着年纪轻轻就足以胜任试卫馆塾长的工作的程度的技术，在剑术之才上无人能出其右。";
+	font-size: 14px;
+	background-color: rgba(204,204,204,0);
+	padding-top: 80px;
+	z-index: 2;
+	color:black;
+	text-align: center;
+}*/
+/*.pic:hover :after,.pic:hover :before{
+	top: 0;
+}*/
+.gallery-section{
+	width: 100%;
+	padding: 10px 0;
+	background: #f1f1f1;
+}
+.inner-width{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 20px;
+}
+.gallery-section h1{
+	text-align: center;
+	text-transform: uppercase;
+	color: #333;
+}
+.border{
+	width: 180px;
+	height: 4px;
+	background: #333;
+	margin: 60px auto;
+}
+.gallery-section .gallery{
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: center;
+}
+.gallery-section .image{
+	flex: 25%;
+	overflow: hidden;
+	cursor: pointer;
+}
+.gallery-section .image img{
+	width: 100%;
+	height: 100%;
+	transition: 0.4s;
+}
+.gallery-section .image:hover img{
+	transform: scale(1.4) rotate(-15deg);
+}
+@media screen and (max-width:960px ) {
+	.gallery-section .image{
+		flex: 33.33%;
+	}
+}
+@media screen and (max-width:768px ) {
+	.gallery-section .image{
+		flex: 50%;
+	}
+}
+@media screen and (max-width:480px ) {
+	.gallery-section .image{
+		flex: 100%;
+	}
+}
+
+
+
+
+/*折叠部分*/
+.section-box{
+	margin-top: 20px;
+}
+.panel-heading a:hover{
+	text-decoration: none;
+}
+.section-box-right{
+	margin-bottom: 20px;
+}
+/*请提交您的信息那块内容*/
+.xxtj{
+	background-color: #333333;
+	text-align: center;
+}
+.xxtj h2{
+	color: white;
+}
+/*线条*/
+.xian{
+	height: 3px;
+	width: 50px;
+	background-color: orange;
+	margin: 20px auto;
+}
+.xxtjbox{
+	margin: 0 auto;
+	width: 80%;
+}
+.xxtjbox .text{
+	width: 45%;
+	height: 45px;
+	background: rgba(255,255,255,0.5);
+	border: none;
+}
+.xxtjbox textarea{
+	height: 200px;
+	width: 90%;
+	margin-top: 10px;
+	background: rgba(255,255,255,0.5);
+	border: none;
+}
+.xxtjbox button{
+	margin-top: 20px;
+	width: 60px;
+	height: 30px;
+	border: 1px solid gray;
+	color: gray;
+	background: none;
+}
+/*页脚部分*/
+.footer{
+	background-color: #333333;
+	text-align: center;
+}
+.footer h2{
+	color: white;
+}
+.footer p {
+	color: #999999 !important;
+	padding: 10px 0px 0px 10px;
+}
+.footer a{
+	color: #999999 !important;
+	text-decoration: none;
+}
+.footer a:hover{/*去掉下划线  且将文字颜色改成白色*/
+	text-decoration: none;
+	color: white !important;
+}
+.footer a:after{/*a标签的后面添加个|符号*/
+	content: " | ";
+}
+@media (max-width: 767px){/*最大宽度是767px以下时,便隐藏掉第一行页脚*/
+	.footer p:first-child{
+		display: none;
+	}
+}

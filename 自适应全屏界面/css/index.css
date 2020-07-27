@@ -1,0 +1,50 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+.b1{
+	width: 100%;
+	height: 100vh;
+	margin: auto;
+	background: url(../image/1.jpg) no-repeat 50% 50%;
+	top: 0;
+	display: table;/*官方解释:	此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。*/
+	background-size: cover;
+}
+.b1 .in1{
+	display: table-cell;/*官方解释:	此元素会作为一个表格单元格显示（类似 <td> 和 <th>）*/
+	vertical-align: middle;
+	width: 100%;
+	max-width: none;
+}
+.content{
+	max-width: 500px;
+	margin: auto;
+	text-align: center;
+}
+.content h1{
+	font-family: "century gothic",sans-serif;
+	color: #f9f3f4;
+	font-size: 500%;
+	text-shadow: 0 0 300px #000;
+}
+.content .btn{
+	border-radius: 9px;
+	color: #F9F3F4;
+	text-decoration: none;
+	font-family: "century gothic",sans-serif;
+	border: 3px solid;
+	padding: 7px 13px;
+	font-weight: bold;
+}
+.content .btn:hover{
+	color: #2196f3;
+}
+p{
+	font-size: 160%;
+	line-height: 200%;
+	text-align: justify;/*官方解释:	实现两端对齐文本效果。*/
+	margin: 3%;
+}

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--视口代码-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 引入 jQuery Mobile 样式 -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<!-- 引入 jQuery 库 -->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<!-- 引入 jQuery Mobile 库 -->
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<!-- 引入 Bootstrap -->
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/kc.css" />
+		<script type="text/javascript" src="js/kc.js" ></script>
+	</head>
+	<body>
+		<div id="page"><!--大盒子-->
+			<div id="header"><!--顶部盒子-->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#example-navbar-collapse" data-role = "none">
+								<span class="sr-only">切换导航</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#"><img src="imgs/logo2.jpg" style="height: 50px;margin-top: -15px;width: 200px;"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li><a href="index.html">首页</a></li>
+								<li><a href="tk.html">图库</a></li>
+								<li class="active"><a href="kc.html">课堂</a></li>
+								<li><a href="js.html">鉴赏</a></li>
+								<li><a href="#">论坛</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></span> 注册</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#myModal1"></span> 登录</a></li>
+							</ul>
+							<!-- Modal --><!--模态框部分代码-->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">注册页面</h4>
+										</div>
+										<div class="modal-body">
+											<form class="contact_">
+												<ul class="bdusually">
+													<li class="usually">
+													
+													</li>
+													<li class="usually">
+														<span>用户名:</span>
+														<!-- pattern="[a-zA-Z]{4,10}"判断至少输入4位，最多10位 -->
+														<input type="text" id="name" name="name"  placeholder="4-10个英文字母" required  pattern="[a-zA-Z]{4,10}"/>
+													</li>
+				                                    <li class="usually">
+				                                        <span>注册邮箱:</span>
+				                                        <input type="email" id="email" name="email" placeholder="javin@example.com"  required pattern="[1-9a-zA-Z_]\w*@\w+(\.[a-zA-Z]{2,})" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>密码:</span>
+				                                        <input type="password" id="passworde" name="password"  placeholder="至少6位，由数字和字母组合成" required pattern="[0-9a-zA-Z]{6,}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>邮编:</span>
+				                                        <input type="number"  name="code" id="code" placeholder="开头不能为0，共6位" required pattern="[1-9][0-9]{5}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>身份证:</span>
+				                                        <input type="text"  name="ident" placeholder="" required />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>手机号码:</span>
+				                                        <input type="tel"  name="tel" id="tel" required pattern="1[3578][0-9]{9}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span >性别:</span>
+				                                        <input type="radio" name="sex" id="male" checked/>
+				                                        <label for="male">男</label>
+				                                        <input type="radio" name="sex" id="female" />
+				                                        <label for="female">女</label>
+				                                    </li>
+				                                    <li>
+				                                        <br/>
+				                                        <button class="submit" type="button" onclick="get()">立即注册</button>
+				                                    </li>
+												</ul>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+											<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+										</div>
+									</div>
+								</div>
+							</div><!--模态框注册部分代码结束-->
+							
+							<!-- Modal登录 -->
+							<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">登录页面</h4>
+                            			</div>
+			                            <div class="modal-body">
+			                                <form class="contact_form" action="#" method="post" name="contact_form" id="myform">
+			                                    <p style="text-align: center;">
+			                                        <span class="title">用户名</span>
+			                                        <input type="text" id="username" size="15" placeholder="用户名/邮箱/手机号"/>
+			                                        <span id="user" class="note"></span>
+			                                    </p>
+			                                    <p style="text-align: center;">
+			                                        <span class="title">密码</span>
+			                                        <input type="password" id="password" size="15" placeholder="请输入密码"/>
+			                                        <span id="pwd" class="note"></span>
+			                                    </p>
+			                                    <p style="text-align: center;"><input type="submit" value="登录" ></p>
+			                                </form>
+			                            </div>
+			                            <div class="modal-footer">
+			                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			                            </div>
+                        			</div>
+                    			</div>
+                			</div><!--模态框登陆部分结束-->
+						</div>
+					</div>
+				</nav>
+			</div><!--顶部盒子代码部分结束-->
+			
+			<div class="tabsection"><!--tab切换部分-->
+				<form>
+			      <input id="myFilter" data-type="search">
+			    </form>
+				<div class="tabsection-dhl"><!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist" >
+						<li role="presentation" class="active">
+							<a href="#home" aria-controls="home" role="tab" data-toggle="tab">新手入学
+							</a>
+                		</li>
+		                <li role="presentation">
+		                    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">进阶提升</a>
+		                </li>
+		                <li role="presentation">
+		                    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">ps后期
+		                    </a>
+		                </li>
+		                <li role="presentation">
+		                    <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">人像专栏</a>
+		                </li>
+		                <li role="presentation">
+		                    <a href="#spotrecord" aria-controls="spotrecord" role="tab" data-toggle="tab">风光专栏</a>
+		                </li>
+		                <li role="presentation">
+		                    <a href="#Life" aria-controls="Life" role="tab" data-toggle="tab">商业摄影</a>
+		                </li>
+					</ul>
+					<!-- Tab panes(新手入学那块) -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+		                    <div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/1.jpg" alt="" />
+									</a>
+									<span>基础到进阶 闪光灯实用技巧篇</span>
+									<p class="first"><b>￥99.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">86292人在学</p>
+								</div>
+							</div>
+		                    <div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/2.jpg" alt="" />
+									</a>
+									<span>零基础可学: 48小节带你玩转微单</span>
+									<p class="first"><b>￥299.00</b></p>
+									<p class="second"><span><img src="imgs/kc/02.jpg"/></span>赵君</p>
+									<p class="third">86292人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/3.jpg" alt="" />
+									</a>
+									<span>8种经典构图 重塑摄影骨架</span>
+									<p class="first"><b>￥299.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">44567人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/4.jpg" alt="" />
+									</a>
+									<span>旅行摄影口袋指南</span>
+									<p class="first"><b>￥399.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">100827人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/5.jpg" alt="" />
+									</a>
+									<span>30节视频课程 带你玩转人像后期ps</span>
+									<p class="first"><b>￥199.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">38175人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/6.jpg" alt="" />
+									</a>
+									<span>告别教科书 轻松入门摄影基础</span>
+									<p class="first"><b>￥399.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">224717人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/7.jpg" alt="" />
+									</a>
+									<span>7年摄影老司机 摄影后期的25个知识点</span>
+									<p class="first"><b>￥99.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">86292人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/8.jpg" alt="" />
+									</a>
+									<span>学好摄影 不枉旅行(人像篇)</span>
+									<p class="first"><b>￥99.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">25092人在学</p>
+								</div>
+							</div>
+						</div>
+						
+						<!--tab切换进阶提升部分-->
+						<div role="tabpanel" class="tab-pane" id="profile" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/11.jpg" alt="" />
+									</a>
+									<span>摄影后期ps 16种调色风格任你选</span>
+									<p class="first"><b>￥399.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">57122人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/12.jpg" alt="" />
+									</a>
+									<span>闪光灯人像实战教学</span>
+									<p class="first"><b>￥698.00</b></p>
+									<p class="second"><span><img src="imgs/kc/03.jpg"/></span>大石</p>
+									<p class="third">40393人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/13.jpg" alt="" />
+									</a>
+									<span>人像高手训练营(第二季)</span>
+									<p class="first"><b>￥998.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">40183人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/14.jpg" alt="" />
+									</a>
+									<span>百种镜头怎么选 实战为王教你拍</span>
+									<p class="first"><b>￥399.00</b></p>
+									<p class="second"><span><img src="imgs/kc/03.jpg"/></span>大石</p>
+									<p class="third">101353人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/15.jpg" alt="" />
+									</a>
+									<span>【电商美工】 影棚拍摄 + 产品精修</span>
+									<p class="first"><b>￥998.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">9073人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/16.jpg" alt="" />
+									</a>
+									<span>人像高手训练营(第一季)</span>
+									<p class="first"><b>￥698.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">260547人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/17.jpg" alt="" />
+									</a>
+									<span>闪光灯特训班 - 20个商业案例实战</span>
+									<p class="first"><b>￥598.00</b></p>
+									<p class="second"><span><img src="imgs/kc/04.jpg"/></span>高卓鹏</p>
+									<p class="third">13615人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/18.jpg" alt="" />
+									</a>
+									<span>人像高手训练营第二季(情绪港风篇)</span>
+									<p class="first"><b>￥99.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">2464人在学</p>
+								</div>
+							</div>
+                		</div>
+
+		                <!-- ps后期 -->
+		                <div role="tabpanel" class="tab-pane" id="messages" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/21.jpg" alt="" />
+									</a>
+									<span>摄影后期ps 16种调色风格任你选</span>
+									<p class="first"><b>￥399.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">57130人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/22.jpg" alt="" />
+									</a>
+									<span>30节视频课程 带你玩转人像后期ps</span>
+									<p class="first"><b>￥199.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">26686人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/23.jpg" alt="" />
+									</a>
+									<span>7年摄影老司机+摄影后期的25个知识点</span>
+									<p class="first"><b>￥9.90</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">26686人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/24.jpg" alt="" />
+									</a>
+									<span>摄影后期ps 快速人像修图攻略</span>
+									<p class="first"><b>￥399.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">32777人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/25.jpg" alt="" />
+									</a>
+									<span>15分钟搞定整套人像摄影后期</span>
+									<p class="first"><b>￥9.90</b></p>
+									<p class="second"><span><img src="imgs/kc/03.jpg"/></span>大石</p>
+									<p class="third">14740人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/26.jpg" alt="" />
+									</a>
+									<span>【电商美工】 影棚拍摄+产品精修</span>
+									<p class="first"><b>￥998.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">9074人在学</p>
+								</div>
+							</div>
+		                </div>
+
+		                <!-- 人像专栏-->
+		                <div role="tabpanel" class="tab-pane" id="settings" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/31.jpg" alt="" />
+									</a>
+									<span>手机摄影高手</span>
+									<p class="first"><b>￥99.00</b></p>
+									<p class="second"><span><img src="imgs/kc/05.jpg"/></span>贾树森</p>
+									<p class="third">24621人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/32.jpg" alt="" />
+									</a>
+									<span>叫你随手给娃拍大片</span>
+									<p class="first"><b>￥99.00</b></p>
+									<p class="second"><span><img src="imgs/kc/05.jpg"/></span>贾树森</p>
+									<p class="third">12759人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/33.jpg" alt="" />
+									</a>
+									<span>人像高手训练营(第二季)</span>
+									<p class="first"><b>￥998.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">40185人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/34.jpg" alt="" />
+									</a>
+									<span>老纳面授班: 古风用相机绘一场梦</span>
+									<p class="first"><b>￥999.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">3594人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/35.jpg" alt="" />
+									</a>
+									<span>一支灯让你拍出N种人像大片</span>
+									<p class="first"><b>￥598.00</b></p>
+									<p class="second"><span><img src="imgs/kc/03.jpg"/></span>大石</p>
+									<p class="third">108667人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/36.jpg" alt="" />
+									</a>
+									<span>普通女孩如何在咖啡厅拍出女神感</span>
+									<p class="first"><b>￥9.90</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">67653人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/37.jpg" alt="" />
+									</a>
+									<span>人像高手训练营(第一季)</span>
+									<p class="first"><b>￥698.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">260549人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/38.jpg" alt="" />
+									</a>
+									<span>婚礼摄影: 记录独一无二的爱情</span>
+									<p class="first"><b>￥199.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">14442人在学</p>
+								</div>
+							</div>
+		                </div>
+		                
+		                <!--风光专栏-->
+		                <div role="tabpanel" class="tab-pane" id="spotrecord" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/41.jpg" alt="" />
+									</a>
+									<span>专业级风光摄影后期美学</span>
+									<p class="first"><b>￥289.00</b></p>
+									<p class="second"><span><img src="imgs/kc/06.jpg"/></span>姚明来</p>
+									<p class="third">10187人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/42.jpg" alt="" />
+									</a>
+									<span>Thomas看看世界,Nik风光后期</span>
+									<p class="first"><b>免费</b></p>
+									<p class="second"><span><img src="imgs/kc/07.jpg"/></span>Thomas看看世界</p>
+									<p class="third">66177人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/43.jpg" alt="" />
+									</a>
+									<span>风光摄影后期: Nik智能工作流程</span>
+									<p class="first"><b>￥199.00</b></p>
+									<p class="second"><span><img src="imgs/kc/07.jpg"/></span>Thomas看看世界</p>
+									<p class="third">29027人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/44.jpg" alt="" />
+									</a>
+									<span>打造艺术感风光摄影</span>
+									<p class="first"><b>￥598.00</b></p>
+									<p class="second"><span><img src="imgs/kc/08.jpg"/></span>武林</p>
+									<p class="third">24252人在学</p>
+								</div>
+							</div>
+		                </div>
+		                
+		                <!--商业摄影-->
+		                <div role="tabpanel" class="tab-pane" id="Life" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="true" data-inset="true">
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/51.jpg" alt="" />
+									</a>
+									<span>闪光灯人像实战教学</span>
+									<p class="first"><b>￥698.00</b></p>
+									<p class="second"><span><img src="imgs/kc/03.jpg"/></span>大石</p>
+									<p class="third">40395人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/52.jpg" alt="" />
+									</a>
+									<span>一支灯让你拍出N种人像大片</span>
+									<p class="first"><b>￥598.00</b></p>
+									<p class="second"><span><img src="imgs/kc/03.jpg"/></span>大石</p>
+									<p class="third">108668人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/53.jpg" alt="" />
+									</a>
+									<span>【电商美工】影棚拍摄+产品精修</span>
+									<p class="first"><b>￥998.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">9076人在学</p>
+								</div>
+							</div>
+							<div class="xc col-xs-12 col-sm-6 col-md-4 col-lg-3">
+								<div class="pic">
+									<a href="">
+										<img src="imgs/kc/54.jpg" alt="" />
+									</a>
+									<span>婚礼摄影: 记录独一无二的爱情</span>
+									<p class="first"><b>￥199.00</b></p>
+									<p class="second"><span><img src="imgs/kc/01.jpg"/></span>老纳</p>
+									<p class="third">14442人在学</p>
+								</div>
+							</div>
+		               </div>
+					</div><!--tab切换部分结束代码-->
+				</div><!--tab切换标题栏那块结束代码-->
+			</div><!--整块tab切换部分代码结束-->
+			
+			
+			<!--<div class="mxjs">
+				<h3>优秀讲师</h3>
+				<div class="mxjs-left col-xs-12 col-sm-6 col-md-3 col-lg-6">
+					<div class="nrbk">
+						<a href="#">
+							<img src="imgs/kc/01.jpg"  alt=""/>
+						</a>
+						<div class="teacher">
+							<a href="#" title="老纳">
+								<span class="name">老纳</span>
+							</a>
+							<span class="icon"></span>
+						</div>
+						<div class="info">
+							<span>微课堂金牌讲师</span>
+						</div>
+						<div class="info2">
+							<span>蜂鸟微课堂金牌讲师；商业摄影师；《蜂鸟说》《摄影叨B叨》电台主播；视觉中国签约摄影师；京东大学特约讲师；知乎合作讲师</span>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			
+			
+			<!--页脚部分-->
+			<div class="footer col-xs-12 col-md-12 col-sm-12 col-lg-12" data-role = "none" >
+				<p data-role = "none">
+					<a href="#" title="关于我们" data-role = "none">关于我们</a>
+					<a href="#" title="About Me" data-role = "none">About Me</a>
+					<a href="#" title="服务条款" data-role = "none">服务条款</a>
+					<a href="#" title="用户服务协议" data-role = "none">用户服务协议</a>
+					<a href="#" title="隐私政策" data-role = "none">隐私政策</a>
+					<a href="#" title="权利声明" data-role = "none">权利声明</a>
+					<a href="#" title="广告服务" data-role = "none">广告服务</a>
+					<a href="#" title="客服中心" data-role = "none">客服中心</a>
+				</p>
+				<p data-role = "none">
+					Copyright © 2019 - 2019 Love scenery All Rights Reserved.
+				</p>
+				<p data-role = "none">
+					版权所有  @ 2019
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

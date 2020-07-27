@@ -1,0 +1,190 @@
+*{/*总体样式*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+/*导航栏部分*/
+.navbar-default{
+	background-color: white;
+}
+.navbar-collapse{/*当屏幕宽度变小时,汉堡按钮的文字居中显示*/
+	text-align: center;
+}
+.navbar-nav a:hover{
+	color: red !important;
+}
+
+/*模态框里的注册页面*/
+.modal-body{
+	/*height: 540px;*/
+}
+.bdusually {
+	margin: 0 auto;
+    width: 100%
+}
+.usually{
+	width: 100%;
+	float: left;
+}
+.usually  span{
+    width: 100px;
+    line-height: 50px;
+    display: block;
+    float: left;
+}
+.usually  input{
+	float: left;
+	width: 200px;
+	height: 20px;
+    box-sizing: border-box;
+    margin-top: 12px;
+}
+.usually  label{
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+    line-height: 50px;
+}
+#male,#female{
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.usually-xq{
+	width: 100%;
+	float: left;
+}
+.usually-xq  span{
+    width: 100px;
+    display: block;
+    float: left;
+}
+.usually-xq input{
+	margin-left: 5px;
+}
+.usually-xq label{
+	margin-left: 5px;
+}
+/*登录里的代码*/
+.title{
+	display: inline-block;
+	width: 60px;
+	text-align: right;
+}
+.note{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+	font-size: 11px;
+	color: red;
+}
+
+
+/*main部分开始*/
+.main{
+	background: #F9F9F9;
+	margin-top: -1.5%;
+	padding-bottom: 30px;
+}
+.container{
+	width: 100%;
+	margin: 10px auto;
+	columns: 4;
+	column-gap: 40px;
+}
+.container .box{
+	width: 100%;
+	margin: 0 0 20px;
+	padding: 10px;
+	background: #fff;
+	overflow: hidden;
+	break-inside: avoid;
+}
+.container .box img{
+	max-width: 100%;
+}
+.container .box .info-box{
+	position: relative;
+	float: left;
+	width: 100%;
+}
+.container .box .info-box img{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin: 10px 5px 5px 0px;
+	position: relative;
+	float: left;
+}
+.container .box .info-box p{
+	position: relative;
+	float: left;
+	margin: 17px 10px 0px 5px;
+}
+.container .box p{
+	margin: 0 ;
+	padding: 0 0 10px;
+	font-size: 16px;
+}
+@media (max-width:1200px ) {
+	.main{
+		margin-top: -3%;
+	}
+	.container{
+		columns: 3;
+		width: calc(100% - 40px);
+		box-sizing: border-box;
+		padding: 20px 20px 20px 0;
+	}
+}
+@media (max-width:768px ) {
+	.main{
+		margin-top: -5%;
+	}
+	.container{
+		columns: 2;
+	}
+}
+@media (max-width:480px ) {
+	.main{
+		margin-top: -5%;
+	}
+	.container{
+		columns: 1;
+	}
+}
+
+/*页脚部分*/
+.footer{
+	background-color: #333333;
+	text-align: center;
+}
+.footer h2{
+	color: white;
+}
+.footer p {
+	color: #999999 !important;
+	text-decoration: none !important;
+	padding: 10px 0px 0px 10px;
+	font-weight: normal !important;
+	box-shadow: none !important;
+}
+.footer a{
+	color: #999999 !important;
+	text-decoration: none !important;
+	font-weight: normal !important;
+	box-shadow: none !important;
+}
+.footer a:hover{/*去掉下划线  且将文字颜色改成白色*/
+	text-decoration: none;
+	color: white !important;
+}
+.footer a:after{/*a标签的后面添加个|符号*/
+	content: " | ";
+}
+@media (max-width: 767px){/*小于767px以下时,便隐藏掉第一行页脚*/
+	.footer p:first-child{
+		display: none;
+	}
+}

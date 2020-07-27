@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<!--视口代码-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 引入 Bootstrap -->
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/js.css" />
+		<script type="text/javascript" src="js/js.js" ></script>
+	</head>
+	<body>
+		<div id="page"><!--大盒子-->
+			<div id="header"><!--顶部盒子-->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#example-navbar-collapse" data-role = "none">
+								<span class="sr-only">切换导航</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#"><img src="imgs/logo2.jpg" style="height: 50px;margin-top: -15px;width: 200px;"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li><a href="index.html">首页</a></li>
+								<li><a href="tk.html">图库</a></li>
+								<li><a href="kc.html">课堂</a></li>
+								<li class="active"><a href="js.html">鉴赏</a></li>
+								<li><a href="#">论坛</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></span> 注册</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#myModal1"></span> 登录</a></li>
+							</ul>
+							<!-- Modal --><!--模态框部分代码-->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">注册页面</h4>
+										</div>
+										<div class="modal-body">
+											<form class="contact_">
+												<ul class="bdusually">
+													<li class="usually">
+													
+													</li>
+													<li class="usually">
+														<span>用户名:</span>
+														<!-- pattern="[a-zA-Z]{4,10}"判断至少输入4位，最多10位 -->
+														<input type="text" id="name" name="name"  placeholder="4-10个英文字母" required  pattern="[a-zA-Z]{4,10}"/>
+													</li>
+				                                    <li class="usually">
+				                                        <span>注册邮箱:</span>
+				                                        <input type="email" id="email" name="email" placeholder="javin@example.com"  required pattern="[1-9a-zA-Z_]\w*@\w+(\.[a-zA-Z]{2,})" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>密码:</span>
+				                                        <input type="password" id="passworde" name="password"  placeholder="至少6位，由数字和字母组合成" required pattern="[0-9a-zA-Z]{6,}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>邮编:</span>
+				                                        <input type="number"  name="code" id="code" placeholder="开头不能为0，共6位" required pattern="[1-9][0-9]{5}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>身份证:</span>
+				                                        <input type="text"  name="ident" placeholder="" required />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>手机号码:</span>
+				                                        <input type="tel"  name="tel" id="tel" required pattern="1[3578][0-9]{9}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span >性别:</span>
+				                                        <input type="radio" name="sex" id="male" checked/>
+				                                        <label for="male">男</label>
+				                                        <input type="radio" name="sex" id="female" />
+				                                        <label for="female">女</label>
+				                                    </li>
+				                                    <li>
+				                                        <br/>
+				                                        <button class="submit" type="button" onclick="get()">立即注册</button>
+				                                    </li>
+												</ul>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+											<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+										</div>
+									</div>
+								</div>
+							</div><!--模态框注册部分代码结束-->
+							
+							<!-- Modal登录 -->
+							<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">登录页面</h4>
+                            			</div>
+			                            <div class="modal-body">
+			                                <form class="contact_form" action="#" method="post" name="contact_form" id="myform">
+			                                    <p style="text-align: center;">
+			                                        <span class="title">用户名</span>
+			                                        <input type="text" id="username" size="15" placeholder="用户名/邮箱/手机号"/>
+			                                        <span id="user" class="note"></span>
+			                                    </p>
+			                                    <p style="text-align: center;">
+			                                        <span class="title">密码</span>
+			                                        <input type="password" id="password" size="15" placeholder="请输入密码"/>
+			                                        <span id="pwd" class="note"></span>
+			                                    </p>
+			                                    <p style="text-align: center;"><input type="submit" value="登录" ></p>
+			                                </form>
+			                            </div>
+			                            <div class="modal-footer">
+			                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			                            </div>
+                        			</div>
+                    			</div>
+                			</div><!--模态框登陆部分结束-->
+						</div>
+					</div>
+				</nav>
+			</div><!--顶部盒子代码部分结束-->
+			
+			
+			<!--main部分-->
+			<div class="main">
+				<div class="container">
+					<!--<div class="box">
+						<img src="imgs/jianshang/1.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11018523</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：多重曝光的关键点是重合的两个题材能一眼就区分出来才有意义，这张照片人物和底图的云彩重合了，颜色又太接近，不仔细看好像人面部油烫伤似的，不太好</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/2.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11018523</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：第一张人物有虚焦的情况，一组照片整体给人的感觉就是有点糊，风光也是有主体的，光圈缩小景深变深的同时，焦点也该在主体身上</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/3.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>Kylin-11260409</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：拍的挺有感觉得，有些照片构图可以，有些构图下人物头顶留白就过多了</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/4.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11018523</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：拍的不错，后期方面还可以再做做例如额头上左侧的光影，双眼的眼神光的大小也可以再做做，差的太多就会有点大小眼的感觉</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/5.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>Kylin-11260409</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：这妹子非常不错，脸型五官很好，但是这两个的表情不太好，感觉没拍出来妹子最好看的一面</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/6.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11018523</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：原片直出画面有些发灰，还是需要后期的</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/7.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>Kylin-11260409</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：光影的运用不错，增加了肌肉的坚毅感，构图方面稍微单调了一些，可以在构图方面再学习加强一下</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/8.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>喵了个咪子琦</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：拍出了银杏色的金黄感觉，但是构图方面还可以更严谨一些</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/9.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>Kylin-11260409</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：后期的对比度有点高了，拍摄时间点也有点晚了，天空与后面的楼宇融合了</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/10.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>喵了个咪子琦</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：在我的印象中落日余晖应该是金黄色给人暖暖的感觉得，这张照片画面天空占比挺大的，色调也明显过于冷调了，和拍摄的题材还是有出入的</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/11.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>警戒线815</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：黑白的人文作品更多的还是要靠光影来提升效果的，建议可以选择光影更有特点的画面</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/12.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>踢球的猴子</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：拍摄自然，构图也有思想，接下来需要提高的就是后期的能力了</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/13.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>警戒线815</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：第三张、第四张，都挺好的，光影捕捉到位，元素也丰富</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/14.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>踢球的猴子</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：创意真的是挺好的，也有后期能力，接下来需要提高的是前期的思路，建议可以看看一些风光的前期课程</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/15.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11069297</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：画面欠曝，导致银杏的金色感没有拍出来，这些是可以靠后期做出来了建议学习下后期的课程</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/16.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11053977</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：第一张挺好的，第二张的角度是对的，但是这个角度是这妹子不太好看的角度，针对人像还是要注意人物状态的</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/17.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11069297</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：前期方面，人物姿势镜像一下，在门与树之间就是框架构图了，后期方面人物鼻子嘴的边缘有一圈黑，蒙版擦得不好</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/18.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11053977</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：这个画面多数都有颗粒感，但是之有主体船只那一部分没有颗粒感，看着。。。很奇怪</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/19.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11069297</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：如果前期你拍的话，可以给黑色背景打个光，背景颜色会变浅，就会好抠图了</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>
+					<div class="box">
+						<img src="imgs/jianshang/20.jpg"  alt=""/>
+						<div class="info-box">
+							<img src="imgs/jianshang/rx2.jpg"/>
+							<p>FNYX11053977</p>
+						</div>
+						<p><img src="imgs/jianshang/left.jpg"/></p>
+						<p style="font-size: 14px;">大石点评：画面的清晰度是拍摄器材的拍摄分辨率决定的，只可以在后期增加锐度，无法增加分辨率，你的情况建议不使用手机调焦而是拍摄之后裁切，当然这种方法解决效果较小，可以找些手机用的比较好的手机镜头，或者干脆买个相机</p>
+						<p><img src="imgs/jianshang/right.jpg"/ style="position: relative;float: right;"></p>
+					</div>-->
+			</div>
+			
+			
+			
+			
+			<!--页脚部分-->
+			<div class="footer col-xs-12 col-md-12 col-sm-12 col-lg-12" >
+				<p>
+					<a href="#" title="关于我们">关于我们</a>
+					<a href="#" title="About Me">About Me</a>
+					<a href="#" title="服务条款">服务条款</a>
+					<a href="#" title="用户服务协议">用户服务协议</a>
+					<a href="#" title="隐私政策">隐私政策</a>
+					<a href="#" title="权利声明">权利声明</a>
+					<a href="#" title="广告服务">广告服务</a>
+					<a href="#" title="客服中心">客服中心</a>
+				</p>
+				<p>
+					Copyright © 2019 - 2019 Love scenery All Rights Reserved.
+				</p>
+				<p>
+					版权所有  @ 2019
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

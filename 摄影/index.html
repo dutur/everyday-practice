@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Love scenery </title>
+		<!--视口代码-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- 引入 Bootstrap -->
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdn.bootcss.com/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+		<link href="https://cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/index.css" />
+		<script type="text/javascript" src="js/index.js" ></script>
+	</head>
+	<body>
+		<div id="page"><!--大盒子-->
+			<div id="header"><!--顶部盒子-->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid"> 
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target="#example-navbar-collapse">
+								<span class="sr-only">切换导航</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#"><img src="imgs/logo2.jpg" style="height: 50px;margin-top: -15px;width: 200px;"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="example-navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="#">首页</a></li>
+								<li><a href="tk.html">图库</a></li>
+								<li><a href="kc.html">课堂</a></li>
+								<li><a href="js.html">鉴赏</a></li>
+								<li><a href="#">论坛</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal"></span> 注册</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-log-in" data-toggle="modal" data-target="#myModal1"></span> 登录</a></li>
+							</ul>
+							<!-- Modal --><!--模态框部分代码-->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">注册页面</h4>
+										</div>
+										<div class="modal-body">
+											<form class="contact_">
+												<ul class="bdusually">
+													<li class="usually">
+													
+													</li>
+													<li class="usually">
+														<span>用户名:</span>
+														<!-- pattern="[a-zA-Z]{4,10}"判断至少输入4位，最多10位 -->
+														<input type="text" id="name" name="name"  placeholder="4-10个英文字母" required  pattern="[a-zA-Z]{4,10}"/>
+													</li>
+				                                    <li class="usually">
+				                                        <span>注册邮箱:</span>
+				                                        <input type="email" id="email" name="email" placeholder="javin@example.com"  required pattern="[1-9a-zA-Z_]\w*@\w+(\.[a-zA-Z]{2,})" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>密码:</span>
+				                                        <input type="password" id="passworde" name="password"  placeholder="至少6位，由数字和字母组合成" required pattern="[0-9a-zA-Z]{6,}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>邮编:</span>
+				                                        <input type="number"  name="code" id="code" placeholder="开头不能为0，共6位" required pattern="[1-9][0-9]{5}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>身份证:</span>
+				                                        <input type="text"  name="ident" placeholder="" required />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span>手机号码:</span>
+				                                        <input type="tel"  name="tel" id="tel" required pattern="1[3578][0-9]{9}" />
+				                                    </li>
+				                                    <li class="usually">
+				                                        <span >性别:</span>
+				                                        <input type="radio" name="sex" id="male" checked/>
+				                                        <label for="male">男</label>
+				                                        <input type="radio" name="sex" id="female" />
+				                                        <label for="female">女</label>
+				                                    </li>
+				                                    <li>
+				                                        <br/>
+				                                        <button class="submit" type="button" onclick="get()">立即注册</button>
+				                                    </li>
+												</ul>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal" >关闭</button>
+											<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+										</div>
+									</div>
+								</div>
+							</div><!--模态框注册部分代码结束-->
+							
+							<!-- Modal登录 -->
+							<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">登录页面</h4>
+                            			</div>
+			                            <div class="modal-body">
+			                                <form class="contact_form" action="#" method="post" name="contact_form" id="myform">
+			                                    <p style="text-align: center;">
+			                                        <span class="title">用户名</span>
+			                                        <input type="text" id="username" size="15" placeholder="用户名/邮箱/手机号"/>
+			                                        <span id="user" class="note"></span>
+			                                    </p>
+			                                    <p style="text-align: center;">
+			                                        <span class="title">密码</span>
+			                                        <input type="password" id="password" size="15" placeholder="请输入密码"/>
+			                                        <span id="pwd" class="note"></span>
+			                                    </p>
+			                                    <p style="text-align: center;"><input type="button" value="登录" onclick="ok()"></p>
+			                                </form>
+			                            </div>
+			                            <div class="modal-footer">
+			                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			                            </div>
+                        			</div>
+                    			</div>
+                			</div><!--模态框登陆部分结束-->
+						</div>
+					</div>
+				</nav>
+			</div><!--顶部盒子代码部分结束-->
+			
+			<div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- 轮播（Carousel）指标 -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>   
+				<!-- 轮播（Carousel）项目 -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="imgs/lbt1.jpg" alt="First slide">
+					</div>
+					<div class="item">
+						<img src="imgs/lbt2.jpg" alt="Second slide">
+					</div>
+					<div class="item">
+						<img src="imgs/lbt3.jpg" alt="Third slide">
+					</div>
+				</div>
+				<!-- 轮播（Carousel）导航 -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div><!--轮播项目的结束 -->
+			
+			<div class="gallery-section">
+				<div class="inner-width">
+					<h1>My Gallery</h1>
+					<div class="border"></div>
+					<div class="gallery">
+						
+						<a href="imgs/sytk/tab1.jpg" class="image">
+							<img src="imgs/sytk/tab1.jpg" alt="">
+						</a>
+						
+						<a href="imgs/sytk/tab2.jpg" class="image">
+							<img src="imgs/sytk/tab2.jpg" alt="">
+						</a>
+						
+						<a href="imgs/sytk/tab3.jpg" class="image">
+							<img src="imgs/sytk/tab3.jpg" alt="">
+						</a>
+						
+						<a href="imgs/sytk/tab4.jpg" class="image">
+							<img src="imgs/sytk/tab4.jpg" alt="">
+						</a>
+						
+						<a href="imgs/sytk/tab5.jpg" class="image">
+							<img src="imgs/sytk/tab5.jpg" alt="">
+						</a>
+						
+						<a href="imgs/sytk/tab6.jpg" class="image">
+							<img src="imgs/sytk/tab6.jpg" alt="">
+						</a>
+						
+						<a href="imgs/sytk/tab7.jpg" class="image">
+							<img src="imgs/sytk/tab7.jpg" alt="">
+						</a>
+						
+						<a href="imgs/sytk/tab8.jpg" class="image">
+							<img src="imgs/sytk/tab8.jpg" alt="">
+						</a>
+						
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!--折叠部分-->
+			<div class="section-box">
+				<div class="section-box-left col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion"
+										href="#collapseOne">
+										新一代入门神器？ 佳能EOS 850D或即将到来
+									</a>
+								</h4>
+							</div>
+		                    <div id="collapseOne" class="panel-collapse collapse in">
+		                        <div class="panel-body">
+		                        	还记得佳能EOS 800D这款相机吗，这款相机搭载了一块2420万像素APS-C画幅传感器，搭配DIGIC 7影像处理器，相信是很多摄影爱好者接触到的第一台佳能单反。而近日，外媒报告这款于2017年上市的入门级单反即将迎来继任者。据称新机型或称为850D，预计于2020年8月亮相。
+		                        </div>
+		                    </div>
+                		</div>
+		                <div class="panel panel-default">
+		                    <div class="panel-heading">
+		                        <h4 class="panel-title">
+		                            <a data-toggle="collapse" data-parent="#accordion"
+		                            href="#collapseTwo">
+		                            	封印解除！ 尼康提供Z7/Z6 RAW视频输出功能
+		                        </a>
+		                        </h4>
+		                    </div>
+		                    <div id="collapseTwo" class="panel-collapse collapse">
+		                    <div class="panel-body">
+		                       			尼康发布了用于尼康Z7和Z6全画幅微单数码相机的固件，其版本为2.20版。此次固件升级通过几项改进提升了相机的功能。而本次的亮点在于，尼康提供了支持RAW视频输出功能的付费服务。相对于早前的2.10固件，2.20版固件带来了对于CFexpress存储卡的支持。CFExpress从本质上来说是XQD的下一个版本，能与XQD完全兼容。此标准将使用1至8条通道的PCIe 3.0接口传输，每条通道最多可传输1GB/s的数据。此标准也支持通过NVM Express提供低开销与低延迟的传输。
+		                    </div>
+		                    </div>
+		                </div>
+		                <div class="panel panel-default">
+		                    <div class="panel-heading">
+		                        <h4 class="panel-title">
+		                            <a data-toggle="collapse" data-parent="#accordion"
+		                            href="#collapseThree">
+		                            	新书推荐 《四十年新闻摄影：图片社时代》
+		                            </a>
+		                        </h4>
+		                    </div>
+		                    <div id="collapseThree" class="panel-collapse collapse">
+		                        <div class="panel-body">
+		                           	 继《希帕时代》和《西格玛时代》之后，本书作为收官之作，结束“四十年新闻摄影”系列三部曲。本书将主要涉及法国及国际上各大图片社：黑星图片社、联系图片社、孔特拉斯托图片社、网络摄影师图片社、朦胧社、VII图片社、VU'图片社等。在这本白皮书中，75位著名摄影记者挑选了各自职业生涯中具有象征意义的照片并附上了评论。这些照片或感人肺腑，或极富戏剧张力和震撼力，偶尔还有些滑稽。
+		                        </div>
+		                    </div>
+		                </div>
+            		</div>
+        		</div>
+        		<div class="section-box-right col-lg-6 col-md-6 col-sm-12 col-xs-12">
+		            <a href="#" class="list-group-item active" style="text-align: center">
+		                <h4>社区热帖</h4>
+		            </a>
+		            <a href="#" class="list-group-item">复古全画幅单反 尼康Df套机售14500元</a>
+		            <a href="#" class="list-group-item">大师时尚界的璀璨经典 50年代的经典画面</a>
+		            <a href="#" class="list-group-item">学院街头人文摄影 不得不知的构图技巧</a>
+		            <a href="#" class="list-group-item">报价索尼α7R IV超广套装售42698元</a>
+		            <a href="#" class="list-group-item">报价口袋里的“α9” 索尼RX100VII售8699</a>
+		        </div>
+    		</div>
+			
+			<div class="xxtj col-xs-12 col-md-12 col-sm-12 col-lg-12">
+				<h2>请留下您的信息</h2>
+				<div class="xian"></div>
+		    	<div class="xxtjbox">
+		    		<input type="text" name="" class="text" 
+		    		placeholder="您的名字">
+		    		<input type="text" name="" class="text"
+		    		placeholder="您的邮箱">
+		    		<br/>
+		    		<textarea rows="3" cols="20" placeholder="您要说的话"></textarea>
+		    		<br/>
+		    		<button>提交</button>
+		    	</div>
+			</div>
+			
+			<!--页脚部分-->
+			<div class="footer col-xs-12 col-md-12 col-sm-12 col-lg-12">
+				<p>
+					<a href="#" title="关于我们">关于我们</a>
+					<a href="#" title="About Me">About Me</a>
+					<a href="#" title="服务条款">服务条款</a>
+					<a href="#" title="用户服务协议">用户服务协议</a>
+					<a href="#" title="隐私政策">隐私政策</a>
+					<a href="#" title="权利声明">权利声明</a>
+					<a href="#" title="广告服务">广告服务</a>
+					<a href="#" title="客服中心">客服中心</a>
+				</p>
+				<p>
+					Copyright © 2019 - 2019 Love scenery All Rights Reserved.
+				</p>
+				<p>
+					版权所有  @ 2019
+				</p>
+			</div>
+		</div>
+		<script>
+			$(".gallery").magnificPopup({
+				delegate:'a',
+				type:'image',
+				gallery:{
+					enabled:true
+				}
+			});
+		</script>
+	</body>
+</html>

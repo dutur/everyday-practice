@@ -1,0 +1,154 @@
+*{/*总体样式*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+/*导航栏部分*/
+.navbar-default{
+	background-color: white;
+}
+.navbar-collapse{/*当屏幕宽度变小时,汉堡按钮的文字居中显示*/
+	text-align: center;
+}
+.navbar-nav a:hover{
+	color: red !important;
+}
+
+/*模态框里的注册页面*/
+.modal-body{
+	/*height: 540px;*/
+}
+.bdusually {
+	margin: 0 auto;
+    width: 520px;
+}
+.usually{
+	width: 100%;
+	float: left;
+}
+.usually  span{
+    width: 100px;
+    line-height: 50px;
+    display: block;
+    float: left;
+}
+.usually  input{
+	float: left;
+	width: 300px;
+	height: 20px;
+    box-sizing: border-box;
+    margin-top: 12px;
+}
+.usually  label{
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+    line-height: 50px;
+}
+#male,#female{
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.usually-xq{
+	width: 100%;
+	float: left;
+}
+.usually-xq  span{
+    width: 100px;
+    display: block;
+    float: left;
+}
+.usually-xq input{
+	margin-left: 5px;
+}
+.usually-xq label{
+	margin-left: 5px;
+}
+.usually textarea{
+	margin-top: 15px;
+}
+/*登录里的代码*/
+.title{
+	display: inline-block;
+	width: 60px;
+	text-align: right;
+}
+.note{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+	font-size: 11px;
+	color: red;
+}
+p#aluba{
+	padding-top: 15px !important;
+}
+
+
+/*中间部分main部分*/
+.main{
+	font-size: 16px;
+	width: 100%;
+}
+.main-left{
+	background: cornflowerblue;
+	padding: 30px 0px;
+	margin: 0px 20px;
+	height: 1000px;
+}
+.main-left li{
+	padding: 10px 20px;
+}
+.main-left li a{
+	color: white;
+}
+.main-left li a:hover{
+	text-decoration: none;
+	color: black;
+}
+.main-left li a span{
+	padding-right: 10px;
+}
+.main-right{
+	width: 75%;
+}
+.main-right iframe{
+	width: 100%;
+	height: 1000px;
+	border: none;
+}
+
+
+
+
+/*页脚部分*/
+.footer{
+	background-color: #333333;
+	text-align: center;
+}
+.footer h2{
+	color: white;
+}
+.footer p {
+	color: #999999 !important;
+	padding: 10px 0px 0px 10px;
+}
+.footer a{
+	color: #999999 !important;
+	text-decoration: none;
+}
+.footer a:hover{/*去掉下划线  且将文字颜色改成白色*/
+	text-decoration: none;
+	color: white !important;
+}
+.footer a:after{/*a标签的后面添加个|符号*/
+	content: " | ";
+}
+@media (max-width: 767px){/*最大宽度是767px以下时,便隐藏掉第一行页脚*/
+	.footer p:first-child{
+		display: none;
+	}
+}

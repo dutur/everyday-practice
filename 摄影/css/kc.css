@@ -1,0 +1,305 @@
+*{/*总体样式*/
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+/*导航栏部分*/
+.navbar-default{
+	background-color: white;
+}
+.navbar-collapse{/*当屏幕宽度变小时,汉堡按钮的文字居中显示*/
+	text-align: center;
+}
+.navbar-nav a:hover{
+	color: red !important;
+}
+
+/*模态框里的注册页面*/
+.modal-body{
+	/*height: 540px;*/
+}
+.bdusually {
+	margin: 0 auto;
+    width: 520px;
+}
+.usually{
+	width: 100%;
+	float: left;
+}
+.usually  span{
+    width: 100px;
+    line-height: 50px;
+    display: block;
+    float: left;
+}
+.usually  input{
+	float: left;
+	width: 300px;
+	height: 20px;
+    box-sizing: border-box;
+    margin-top: 12px;
+}
+.usually  label{
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+    line-height: 50px;
+}
+#male,#female{
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.usually-xq{
+	width: 100%;
+	float: left;
+}
+.usually-xq  span{
+    width: 100px;
+    display: block;
+    float: left;
+}
+.usually-xq input{
+	margin-left: 5px;
+}
+.usually-xq label{
+	margin-left: 5px;
+}
+.usually textarea{
+	margin-top: 15px;
+}
+/*登录里的代码*/
+.title{
+	display: inline-block;
+	width: 60px;
+	text-align: right;
+}
+.note{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+	font-size: 11px;
+	color: red;
+}
+
+
+/*tab切换*/
+@media (max-width:767px ) {
+	.nav-tabs{
+		font-size: 12px;
+	}
+}
+@media (min-width:767px){
+	.nav-tabs{
+		padding-left: 22%;
+	}
+}
+@media (min-width:1024px){
+	.nav-tabs{
+		padding-left: 22%;
+	}
+}
+@media (min-width:1200px){
+	.nav-tabs{
+		padding-left: 33%;
+	}
+}
+@media  (max-width:380px ) {
+	.nav-tabs li:nth-child(5){
+		display: none;
+	}
+}
+@media (max-width:420px ) {
+	.nav-tabs li:last-child{
+		display: none;
+	}
+}
+.nav-tabs>li>a{
+	margin-right: 0px !important;
+}
+.tabsection{
+	padding: 10px;
+	overflow: hidden;
+}
+.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a{
+	box-shadow: none;
+}
+.tabsection-dhl{
+	margin: 0 auto;
+	overflow: hidden;
+}
+/*图片部分*/
+.pic{
+	margin: 20px auto;
+	width: 315px;
+	height: 303px;	
+	position: relative;
+	overflow: hidden;
+	/*box-shadow: 5px 8px 10px gray;*/
+	background-color: #f7f7f7;
+}
+.pic div{
+	width: 100%;
+	color: white;
+	background: orange;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	position: absolute;
+	bottom: -50px;
+	transform: 1s;
+	text-align: center;
+}
+.pic img{
+	width: 100%;
+	height: 70%;
+	position: absolute;
+	top: 0;
+	transition: 2s;
+}
+.pic:hover{
+	box-shadow: 5px 8px 10px gray;
+}
+.pic:hover :after,.pic:hover :before{
+	top: 0;
+}
+.pic span{
+	position: absolute;
+	top: 72%;
+	text-indent: 1em;
+}
+.pic p{
+	position: relative;
+	top: 80%;
+	text-indent: 1em;
+}
+.first{
+	color: red;
+	font-weight: bold;
+	border-bottom: 1px solid #E3E3E3;
+}
+.pic >.second{
+	position: relative;
+	top: 80%;
+	text-indent: 1.5em;
+	float: left;
+	color: #999999;
+	/*background-image: url(../imgs/kecheng/01.jpg);
+	background-repeat: no-repeat;
+	background-size: 30px;*/
+}
+.second >span{
+	width: 35px;
+	height: 40px;
+	float: left;
+	top: -5px;
+	position: relative;
+}
+.second >span img{
+	border-radius: 50%;
+}
+.pic >.third{
+	position: relative;
+	float: right;
+	top: 80%;
+	right: 10px;
+	color: #999999;
+}
+
+/*明星讲师*/
+.mxjs{
+	width: 100%;
+	height: 230px;
+}
+.mxjs h3{
+	text-align: center;
+}
+.mxjs-left{
+	width: 100%;
+	height: 180px;
+}
+.nrbk{
+	width: 100%;
+	height: 170px;
+	background-color: white;
+	position: relative;
+	float: right;
+}
+.nrbk a>img{
+	width: 140px;
+	height: 140px;
+	margin: 10px;
+	float: left;
+}
+.teacher{
+	width: 100%;
+}
+.name{
+	position: relative;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-size: 20px;
+	color: black;
+}
+.wz{
+	position: relative;
+	float: left;
+}
+.icon{
+	/*background-image: url(../imgs/kc/icon.png);*/
+	width: 21px;
+	height: 21px;
+	margin-left: 10px;
+	display: inline-block;
+	margin-right: 10px;
+	float: left;
+}
+.info{
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+.info,.info2{
+	margin-left: 8px;
+}
+
+
+
+
+
+
+/*页脚部分*/
+.footer{
+	margin-top: 30px;
+	background-color: #333333;
+	text-align: center;
+}
+.footer h2{
+	color: white;
+}
+.footer p {
+	color: #999999 !important;
+	text-decoration: none !important;
+	padding: 10px 0px 0px 10px;
+	font-weight: normal !important;
+	box-shadow: none !important;
+}
+.footer a{
+	color: #999999 !important;
+	text-decoration: none !important;
+	font-weight: normal !important;
+	box-shadow: none !important;
+}
+.footer a:hover{/*去掉下划线  且将文字颜色改成白色*/
+	text-decoration: none;
+	color: white !important;
+}
+.footer a:after{/*a标签的后面添加个|符号*/
+	content: " | ";
+}
+@media (max-width: 767px){/*小于767px以下时,便隐藏掉第一行页脚*/
+	.footer p:first-child{
+		display: none;
+	}
+}

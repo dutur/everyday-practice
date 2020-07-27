@@ -1,0 +1,18 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+table{
+	width: 100%;
+	background-color: white;
+	border: 1px;
+}
+tr,th{
+	text-align: center;
+}
+tr td a:hover{
+	text-decoration: none;
+}

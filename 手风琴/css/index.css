@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+body{
+	background: url(../image/bg.jpg) center top no-repeat;
+}
+#wrap{
+	width: 1090px;
+	height: 429px;
+	margin: 160px auto;
+	overflow: hidden;
+}
+#wrap ul{
+	width: 120%;
+}
+#wrap ul li{
+	list-style: none;
+	width: 100px;
+	height: 429px;
+	float: left;
+}
+#wrap ul li .txt{
+	width:100px;
+	height: 429px;
+	background: rgba(0,0,0,.5);
+	overflow: hidden;
+}
+#wrap ul li .txt p{
+	padding: 10px 42px;
+	background: rgba(0,0,0,.5);
+	color: white;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}

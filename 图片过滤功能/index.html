@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片过滤功能</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<section>
+			<ul>
+				<li class="list active" data-filter="All">All</li>
+				<li class="list" data-filter="mobile">mobile</li>
+				<li class="list" data-filter="camera">Camera</li>
+				<li class="list" data-filter="watch">watch</li>
+				<li class="list" data-filter="shoe">Shoe</li>
+				<li class="list" data-filter="headphone">headphone</li>
+			</ul>
+			<div class="product">
+				<div class="itemBox mobile"><img src="images/1.jpg"></div>
+				<div class="itemBox camera"><img src="images/2.jpg"></div>
+				<div class="itemBox watch"><img src="images/3.jpg"></div>
+				<div class="itemBox shoe"><img src="images/4.jpg"></div>
+				<div class="itemBox headphone"><img src="images/5.jpg"></div>
+				<div class="itemBox mobile"><img src="images/6.jpg"></div>
+				<div class="itemBox camera"><img src="images/7.jpg"></div>
+				<div class="itemBox watch"><img src="images/8.jpg"></div>
+				<div class="itemBox shoe"><img src="images/9.jpg"></div>
+				<div class="itemBox headphone"><img src="images/10.jpg"></div>
+				<div class="itemBox mobile"><img src="images/11.jpg"></div>
+				<div class="itemBox camera"><img src="images/12.jpg"></div>
+				<div class="itemBox watch"><img src="images/13.jpg"></div>
+				<div class="itemBox headphone"><img src="images/14.jpg"></div>
+				<div class="itemBox camera"><img src="images/15.jpg"></div>
+				<div class="itemBox watch"><img src="images/16.jpg"></div>
+				<div class="itemBox headphone"><img src="images/17.jpg"></div>
+				<div class="itemBox camera"><img src="images/18.jpg"></div>
+				<div class="itemBox headphone"><img src="images/19.jpg"></div>
+				<div class="itemBox headphone"><img src="images/20.jpg"></div>
+			</div>
+		</section>
+		
+		<script type="text/javascript" src="jquery-3.4.1.min.js" ></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.list').click(function(){
+					const value = $(this).attr('data-filter');
+					if(value == 'all'){
+						$('.itemBox').show('1000');
+					}else{
+						$('.itemBox').not('.' + value).hide('1000');
+						$('.itemBox').filter('.' + value).show('1000');
+					}
+				})
+				
+				$('.list').click(function(){
+					$(this).addClass('active').siblings().removeClass('active');
+				})
+			})
+		</script>
+	</body>
+</html>

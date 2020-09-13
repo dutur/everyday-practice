@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>密码生成器</title>
+	<link rel="stylesheet" href="iconfont.css" />
+	<link rel="stylesheet" href="index.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="text">Random Password Generator <br>in HTML CSS & JavaScript</div>
+		<div class="input-data">
+			<div class="display">
+				<input type="text">
+				<span class="iconfont icon-copy" onclick="copy()"></span>
+				<span class="iconfont icon-copy1" onclick="copy()"></span>
+			</div>
+			<button>Generate Password</button>
+		</div>
+	</div>
+	<script>
+		const display = document.querySelector("input");
+		const button = document.querySelector("button");
+		const copyBtn = document.querySelector("span.icon-copy");
+		const copyActive = document.querySelector("span.icon-copy1");
+		let chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~|{}[]:;?<>,./-=";
+		button.onclick = () =>{
+			let i;
+			randomPassword = "";
+			copyBtn.style.display = "none";
+			copyActive.style.display = "block";
+			for(i = 0; i < 16; i++){
+				randomPassword = randomPassword + chars.charAt(
+					Math.floor(Math.random() * chars.length)
+				);
+			}
+			display.value = randomPassword;
+		}
+		function copy(){
+			copyBtn.style.display = "none";
+			copyActive.style.display = "block";
+			display.select();
+			document.execCommand("copy");
+		}
+	</script>
+</body>
+</html>
